@@ -9,7 +9,7 @@ RUN yum update -y \
     && yum clean all
 
 # Install cpm/carton
-RUN cpanm -nq App::cpm Carton::Snapshot
+RUN cpanm -nq App::cpm App::Yath Carton::Snapshot
 
 # Set default command
 CMD ["/usr/bin/bash"]
