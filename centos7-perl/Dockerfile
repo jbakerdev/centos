@@ -2,6 +2,8 @@ FROM ghcr.io/jbakerdev/centos7
 LABEL name="jbakerdev/centos7-perl" \
       description="Arctos CentOS 7 with Perl"
 
+COPY cpanfile /tmp/
+
 # Update and install packages
 RUN yum update -y \
     && yum install -y --setopt=tsflags=nodocs \
@@ -10,6 +12,8 @@ RUN yum update -y \
 
 # Install cpm/carton
 RUN cpanm -nq App::cpm App::Yath Carton::Snapshot
+
+RUN cpm install -g --show-build-log-on-failure --cpanfile /tmp/cpanfile
 
 # Set default command
 CMD ["/usr/bin/bash"]
