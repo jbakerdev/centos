@@ -8,6 +8,7 @@ RUN yum update -y \
         curl \
         gcc \
         gcc-c++ \
+        git \
         make \
     && yum clean all
 
