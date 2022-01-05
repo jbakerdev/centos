@@ -8,6 +8,7 @@ RUN dnf update -y \
         curl \
         gcc \
         gcc-c++ \
+        git \
         make \
     && dnf clean all
 

@@ -13,6 +13,7 @@ RUN sed -i \
         curl \
         gcc \
         gcc-c++ \
+        git \
         make \
     && yum clean all
 
