@@ -38,6 +38,7 @@ jobs:
       packages: write
     strategy:
       matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+      fail-fast: false
     env:
       # github.repository as <account>/<repo>
       IMAGE_NAME: jbakerdev/${{ matrix.directory }}
